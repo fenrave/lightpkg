@@ -2,11 +2,11 @@ PREFIX = /usr
 
 all:
 	@echo Run \'make install\' to install LightPKG.
+	@chmod 755 lightpkg
 
 install:
-	@sudo mkdir -p $(DESTDIR)$(PREFIX)/bin
-	@sudo cp -p lightpkg $(DESTDIR)$(PREFIX)/bin/lightpkg
-	@sudo chmod 755 $(DESTDIR)$(PREFIX)/bin/lightpkg
+	@mkdir -p $(DESTDIR)$(PREFIX)/bin
+	@cp -p lightpkg $(DESTDIR)$(PREFIX)/bin/lightpkg
 
 uninstall:
-	@sudo rm -rf $(DESTDIR)$(PREFIX)/bin/lightpkg
+	@rm -rf $(DESTDIR)$(PREFIX)/bin/lightpkg
