@@ -1,0 +1,20 @@
+#!/usr/bin/env lua
+os.execute("sudo rm -rf /tmp/*")
+if arg[1] == "install" or arg[1] == "-S" then
+	if arg[2] == "a" then
+		os.execute("git clone https://aur.archlinux.org/"..arg[3].." /tmp/"..arg[3])
+		os.execute("cd /tmp/"..arg[3].." && makepkg -si")
+	else	
+		os.execute("sudo pacman -S "..arg[2])
+	end
+end
+if arg[1] == "update" or arg[1] == "-Syu" then
+	print("AUR packages require you to reinstall them to update them!")
+	os.execute("sudo pacman -Syu")
+end
+if arg[1] == "remove" or arg[1] == "-R" then
+	os.execute("sudo pacman -R "..arg[2])
+end
+if #arg == 0 then
+   print('Use "lightpkg install a PACKAGENAME" to install aur packages, and "lightpkg install PACKAGENAME for normal packages"')
+end
