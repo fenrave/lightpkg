@@ -2,7 +2,7 @@
 if arg[1] == "install" or arg[1] == "-S" then
 	if arg[2] == "a" then
 		os.execute("git clone https://aur.archlinux.org/"..arg[3].." /tmp/"..arg[3])
-		os.execute("cd /tmp/lightpkg/"..arg[3].." && makepkg -si")
+		os.execute("cd /tmp/"..arg[3].." && makepkg -si")
 		os.execute("sudo rm -rf /tmp/"..arg[3])
 	else	
 		os.execute("sudo pacman -S "..arg[2])
