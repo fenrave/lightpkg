@@ -6,7 +6,7 @@ Most packages need the `base-devel` group to compile!
 
 To install these run `sudo pacman -S lua git base-devel` 
 
-Almost everyone uses sudo and pacman comes preinstalled on the OS this is targeted to (Arch Linux) so that's why we are only installing lua and git and then base-devel.
+Almost everyone who uses Arch or some derivative will have sudo and pacman preinstalled. So Lua, git and base-devel are the only required dependencies.
 
 TO INSTALL:
 
